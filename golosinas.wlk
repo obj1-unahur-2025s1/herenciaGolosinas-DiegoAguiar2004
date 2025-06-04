@@ -19,8 +19,15 @@ class Bombon {
 	method mordisco() { peso = peso * 0.8 - 1 }
 	method sabor() { return frutilla }
 	method libreGluten() { return true }
+	method gradoDureza() = if(peso > 12) 3 else if (peso.between(8, 12)) 2 else 1
 }
 
+class BombonDuro inherits Bombon{
+	method gradoDureza() = if(peso > 12) 3 else if (peso.between(8, 12)) 2 else 1
+	override method mordisco() {
+		peso = peso - 1
+	} 
+}
 
 class Alfajor {
 	var peso = 15
@@ -34,11 +41,10 @@ class Alfajor {
 
 class Caramelo {
 	var peso = 5
-
+	var property sabor
 	method precio() { return 12 }
 	method peso() { return peso }
 	method mordisco() { peso = peso - 1 }
-	method sabor() { return frutilla }
 	method libreGluten() { return true }
 }
 
@@ -68,7 +74,7 @@ class Oblea {
 			peso = peso * 0.5
 		} else { 
 			// pierde el 25% del peso
-			peso = peso - (peso * 0.25)
+			peso = peso * (1 - 0.50)
 		}
 	}	
 	method sabor() { return vainilla }

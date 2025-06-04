@@ -1,6 +1,6 @@
 import golosinas.*
 
-object mariano {
+class Personas {
 	const golosinas = []
 	 
 	method comprar(_golosina) { golosinas.add(_golosina) }

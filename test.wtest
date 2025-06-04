@@ -4,7 +4,24 @@ import mariano.*
 describe "group of tests" {
 
   test "test 1" {
-    assert.equals(100, 50+50)
+    const mariano = new Personas()
+    const unBonbon = new Bombon()
+    const unAlfa = new Alfajor()
+    mariano.comprar(unBonbon)
+    mariano.comprar(unAlfa)
+    assert.equals([vainilla] , mariano.saboresFaltantes([vainilla , chocolate , frutilla]))
   }
 
+  test "test 2" {
+    const mariano = new Personas()
+    const unBonbon = new Bombon()
+    const unChupe = new Chupetin(peso = 10)
+    const unTuttifrutti = new Tuttifrutti(libreDeGluten = true)
+    const unTuttifrutti2 = new Tuttifrutti(libreDeGluten = false)
+    mariano.comprar(unBonbon)
+    mariano.comprar(unChupe)
+    mariano.comprar(unTuttifrutti)
+    mariano.comprar(unTuttifrutti2)
+    assert.equals(unTuttifrutti , mariano.golosinaMasCara())
+  }
 }
